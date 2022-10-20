@@ -34,10 +34,10 @@ namespace ConsoleUI
 
             //userService.Add(user);
 
-            foreach (var u in userService.GetAll().Data)
-            {
-                Console.WriteLine(u.UserId + " " + u.FirstName + " " + u.LastName + " " + u.Email + " " + u.Password);
-            }
+            //foreach (var u in userService.GetAll().Data)
+            //{
+            //    Console.WriteLine(u.UserId + " " + u.FirstName + " " + u.LastName + " " + u.Email + " " + u.Password);
+            //}
         }
 
         private static void GetCarDetailsTest()

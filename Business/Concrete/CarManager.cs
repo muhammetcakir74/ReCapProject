@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Business.Abstract;
+using Business.BusinessAspects;
 using Business.Constants;
+using Core.Aspects.Autofac.Caching;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -45,6 +47,8 @@ namespace Business.Concrete
             return new SuccessDataResult<Car>(_carDal.Get(c=>c.CarId== carId));
         }
 
+        [SecuredOperation("admin")]
+        [CacheAspect]
         public IDataResult<List<Car>> GetAll()
         {
             return new SuccessDataResult<List<Car>>(_carDal.GetAll());
